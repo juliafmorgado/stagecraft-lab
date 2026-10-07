@@ -1,0 +1,1 @@
+<ol class="ladder">{% for s in site.segments %}{% if s.num != "" %}<li class="ladder-step"><a href="{{ s.url | relative_url }}"><span class="ladder-num">{{ s.num }}</span><span class="ladder-title">{{ s.title }}</span><span class="ladder-time">{{ s.time }} min</span></a></li>{% endif %}{% endfor %}</ol>

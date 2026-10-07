@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{% assign nav = site.segments %}
+{% assign current = "" %}
+{% for s in nav %}{% if s.url == page.url %}{% assign current = s %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}
+{% if current == "" %}{% for s in site.reference %}{% if s.url == page.url %}{% assign current = s %}{% endif %}{% endfor %}{% endif %}
+{% if current != "" and current.url != "/" %}
+<title>{{ current.title }} · {{ site.title }}</title>
+{% else %}
+<title>{{ site.title }}</title>
+{% endif %}
+<meta name="description" content="{{ site.description }}">
+<meta name="theme-color" content="#f7f3ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151311" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23c8442c'/%3E%3Cpath d='M10 22l6-12 6 12' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-mark" aria-hidden="true"></span>{{ site.title }}</a>
+    <span class="topbar-meta">60-minute lab</span>
+  </div>
+</header>
+
+<div class="shell">
+  <details class="sidebar" id="nav">
+    <summary class="nav-toggle">
+      <span class="nav-toggle-label">{% if current != "" and current.num != "" %}{{ current.num }} · {% endif %}{% if current != "" %}{{ current.title }}{% else %}Menu{% endif %}</span>
+      <span class="nav-toggle-hint">All segments</span>
+    </summary>
+    <nav aria-label="Workshop segments">
+      <p class="nav-heading">The lab</p>
+      <ol class="nav-list">
+        {% for s in nav %}
+        <li>
+          <a class="nav-link{% if s.url == page.url %} active{% endif %}" href="{{ s.url | relative_url }}"{% if s.url == page.url %} aria-current="page"{% endif %}>
+            <span class="nav-num">{% if s.num != "" %}{{ s.num }}{% else %}00{% endif %}</span>
+            <span class="nav-title">{{ s.title }}</span>
+            <span class="nav-time">{{ s.time }}′</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ol>
+      <p class="nav-heading">Reference</p>
+      <ul class="nav-list">
+        {% for s in site.reference %}
+        <li>
+          <a class="nav-link{% if s.url == page.url %} active{% endif %}" href="{{ s.url | relative_url }}"{% if s.url == page.url %} aria-current="page"{% endif %}>
+            <span class="nav-title">{{ s.title }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </details>
+
+  <main id="content">
+    {% if current != "" and current.num != "" and current.num %}
+    <p class="eyebrow">Segment {{ current.num }} <span aria-hidden="true">·</span> {{ current.time }} min</p>
+    {% elsif current != "" and current.url != "/" %}
+    <p class="eyebrow">Reference</p>
+    {% endif %}
+    <article class="prose">
+      {{ content }}
+    </article>
+
+    {% if idx %}
+    <nav class="pager" aria-label="Segment navigation">
+      {% assign prev_i = idx | minus: 1 %}
+      {% assign next_i = idx | plus: 1 %}
+      {% if idx > 0 %}
+      <a class="pager-link prev" href="{{ nav[prev_i].url | relative_url }}">
+        <span class="pager-dir">Previous</span>
+        <span class="pager-title">{{ nav[prev_i].title }}</span>
+      </a>
+      {% else %}<span></span>{% endif %}
+      {% if next_i < nav.size %}
+      <a class="pager-link next" href="{{ nav[next_i].url | relative_url }}">
+        <span class="pager-dir">Next</span>
+        <span class="pager-title">{{ nav[next_i].title }}</span>
+      </a>
+      {% endif %}
+    </nav>
+    {% endif %}
+
+    <footer class="foot">
+      <p class="foot-credit">{{ site.credit }}</p>
+      <p class="foot-links"><a href="{{ site.repo }}" rel="noopener">Source on GitHub</a></p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function () {
+  var PREFIX = 'stagecraft:';
+
+  function load(k) { try { return localStorage.getItem(PREFIX + k); } catch (e) { return null; } }
+  function save(k, v) { try { localStorage.setItem(PREFIX + k, v); return true; } catch (e) { return false; } }
+  function drop(k) { try { localStorage.removeItem(PREFIX + k); } catch (e) {} }
+
+  // Nav: open as a sidebar on wide screens, a collapsed drawer on phones.
+  var nav = document.getElementById('nav');
+  var wide = window.matchMedia('(min-width: 900px)');
+  function syncNav() { if (wide.matches) nav.setAttribute('open', ''); else nav.removeAttribute('open'); }
+  syncNav();
+  if (wide.addEventListener) wide.addEventListener('change', syncNav);
+
+  // Wide tables scroll inside their own box.
+  document.querySelectorAll('.prose table').forEach(function (table) {
+    var wrap = document.createElement('div');
+    wrap.className = 'table-scroll';
+    table.parentNode.insertBefore(wrap, table);
+    wrap.appendChild(table);
+  });
+
+  // Template cards: [placeholder] becomes a highlighted blank, ___ an empty line.
+  document.querySelectorAll('.prose .card').forEach(function (card) {
+    card.querySelectorAll('p, li').forEach(function (el) {
+      el.innerHTML = el.innerHTML
+        .replace(/\[([^\]<]+)\]/g, '<span class="blank">$1</span>')
+        .replace(/_{3,}/g, '<span class="blank blank-empty" aria-label="blank"></span>');
+    });
+  });
+
+  // Checklists remember their state per page.
+  var boxes = document.querySelectorAll('.prose .task-list-item-checkbox');
+  var boxKey = 'checks:' + location.pathname;
+  var saved = [];
+  try { saved = JSON.parse(load(boxKey) || '[]'); } catch (e) {}
+  boxes.forEach(function (box, i) {
+    box.disabled = false;
+    if (saved[i]) box.checked = true;
+    box.addEventListener('change', function () {
+      save(boxKey, JSON.stringify(Array.prototype.map.call(boxes, function (b) { return b.checked; })));
+    });
+  });
+
+  // Workbook fields: saved in this browser only, never sent anywhere.
+  document.querySelectorAll('textarea[data-field]').forEach(function (area) {
+    var id = area.getAttribute('data-field');
+    var status = area.parentNode.querySelector('.field-status');
+    var v = load('field:' + id);
+    if (v) area.value = v;
+    var t;
+    area.addEventListener('input', function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        var ok = area.value.trim() ? save('field:' + id, area.value) : (drop('field:' + id), true);
+        if (status) status.textContent = ok ? 'Saved on this device' : 'Not saved: write it on paper too';
+      }, 300);
+    });
+  });
+
+  // Take it home: gather every field into one sheet.
+  var sheet = document.querySelector('[data-workbook]');
+  if (sheet) {
+    var rows = sheet.querySelectorAll('[data-sheet-field]');
+    var filled = 0;
+    rows.forEach(function (row) {
+      var v = load('field:' + row.getAttribute('data-sheet-field'));
+      var out = row.querySelector('.sheet-value');
+      if (v) { out.textContent = v; filled++; row.classList.add('is-filled'); }
+    });
+    var countEl = sheet.querySelector('.sheet-count');
+    if (countEl) countEl.textContent = filled + ' of ' + rows.length + ' filled in';
+
+    var copyBtn = sheet.querySelector('[data-copy-sheet]');
+    copyBtn && copyBtn.addEventListener('click', function () {
+      var text = Array.prototype.map.call(rows, function (row) {
+        var v = load('field:' + row.getAttribute('data-sheet-field'));
+        return row.querySelector('.sheet-label').textContent + '\n' + (v || '—');
+      }).join('\n\n');
+      function done(ok) {
+        copyBtn.textContent = ok ? 'Copied' : 'Select the text and copy it';
+        setTimeout(function () { copyBtn.textContent = 'Copy my sheet'; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+      } else { done(false); }
+    });
+
+    var clearBtn = sheet.querySelector('[data-clear-sheet]');
+    var armed = false;
+    clearBtn && clearBtn.addEventListener('click', function () {
+      if (!armed) {
+        armed = true;
+        clearBtn.textContent = 'Tap again to erase everything';
+        clearBtn.classList.add('is-armed');
+        setTimeout(function () { armed = false; clearBtn.textContent = 'Clear my answers'; clearBtn.classList.remove('is-armed'); }, 4000);
+        return;
+      }
+      rows.forEach(function (row) { drop('field:' + row.getAttribute('data-sheet-field')); });
+      location.reload();
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

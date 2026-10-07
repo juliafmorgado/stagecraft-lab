@@ -1,0 +1,19 @@
+<figure class="diagram"><svg viewBox="0 0 640 470" role="img" aria-labelledby="sm-title sm-desc" xmlns="http://www.w3.org/2000/svg"><title id="sm-title">Stage geometry map</title><desc id="sm-desc">A stage seen from above with the audience at the bottom. The screen is at the back. The podium and your home base are on one side. The climax X is front and center, with two footprints hip-width apart. Dashed sightlines run from the X to three audience zones: left, center and right.</desc>
+<rect class="d-stage" x="20" y="16" width="600" height="244" rx="10"/>
+<rect class="d-screen" x="190" y="30" width="260" height="16" rx="3"/><text class="d-small d-muted" x="320" y="68" text-anchor="middle">screen</text>
+<rect class="d-podium" x="40" y="116" width="108" height="60" rx="6"/><text class="d-label" x="94" y="154" text-anchor="middle">Podium</text>
+<circle class="d-home" cx="190" cy="196" r="30"/><text class="d-small" x="190" y="244" text-anchor="middle">home base</text>
+<path class="d-walk" d="M222 196 Q 290 230 352 206"/><text class="d-small d-muted" x="292" y="150" text-anchor="middle">walk on</text><text class="d-small d-muted" x="292" y="172" text-anchor="middle">transitions</text>
+<line class="d-sight" x1="400" y1="200" x2="120" y2="300"/><line class="d-sight" x1="400" y1="200" x2="320" y2="300"/><line class="d-sight" x1="400" y1="200" x2="520" y2="300"/>
+<g class="d-x"><line x1="378" y1="160" x2="422" y2="204"/><line x1="422" y1="160" x2="378" y2="204"/></g>
+<ellipse class="d-foot" cx="388" cy="222" rx="7" ry="12"/><ellipse class="d-foot" cx="412" cy="222" rx="7" ry="12"/>
+<text class="d-label" x="440" y="178">Climax X</text><text class="d-small d-muted" x="440" y="204">feet hip-width,</text><text class="d-small d-muted" x="440" y="226">weight even</text>
+<line class="d-edge" x1="20" y1="260" x2="620" y2="260"/>
+<rect class="d-zone" x="24" y="300" width="192" height="150" rx="10"/><rect class="d-zone" x="224" y="300" width="192" height="150" rx="10"/><rect class="d-zone" x="424" y="300" width="192" height="150" rx="10"/>
+<g class="d-heads">
+<circle cx="60" cy="370" r="7"/><circle cx="95" cy="370" r="7"/><circle cx="130" cy="370" r="7"/><circle cx="165" cy="370" r="7"/><circle cx="60" cy="405" r="7"/><circle cx="95" cy="405" r="7"/><circle cx="130" cy="405" r="7"/><circle cx="165" cy="405" r="7"/>
+<circle cx="260" cy="370" r="7"/><circle cx="295" cy="370" r="7"/><circle cx="345" cy="370" r="7"/><circle cx="380" cy="370" r="7"/><circle cx="260" cy="405" r="7"/><circle cx="295" cy="405" r="7"/><circle cx="345" cy="405" r="7"/><circle cx="380" cy="405" r="7"/>
+<circle cx="475" cy="370" r="7"/><circle cx="510" cy="370" r="7"/><circle cx="545" cy="370" r="7"/><circle cx="580" cy="370" r="7"/><circle cx="475" cy="405" r="7"/><circle cx="510" cy="405" r="7"/><circle cx="545" cy="405" r="7"/><circle cx="580" cy="405" r="7"/>
+</g>
+<text class="d-label" x="120" y="342" text-anchor="middle">Left</text><text class="d-label" x="320" y="342" text-anchor="middle">Center</text><text class="d-label" x="520" y="342" text-anchor="middle">Right</text>
+</svg><figcaption>Seen from above, audience at the bottom. Left and right are the audience's.</figcaption></figure>

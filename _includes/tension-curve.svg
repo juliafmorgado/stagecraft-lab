@@ -1,0 +1,13 @@
+<figure class="diagram"><svg viewBox="0 0 640 330" overflow="visible" role="img" aria-labelledby="tc-title tc-desc" xmlns="http://www.w3.org/2000/svg"><title id="tc-title">The tension curve</title><desc id="tc-desc">Tension starts high with the hook, drops while you give context, then climbs through four tension points, each a little higher than the last, to the climax slide. It eases for a moment and rises again on the takeaway. A dashed flat line below shows a talk with no tension.</desc>
+<line class="d-axis" x1="30" y1="290" x2="625" y2="290"/><line class="d-axis" x1="30" y1="290" x2="30" y2="20"/>
+<text class="d-small" x="625" y="314" text-anchor="end">time</text><text class="d-small" x="22" y="30" text-anchor="end" transform="rotate(-90 22 30)">tension</text>
+<line class="d-flat" x1="40" y1="225" x2="620" y2="225"/><text class="d-small d-muted" x="620" y="250" text-anchor="end">flat line: a list of facts</text>
+<polyline class="d-curve" points="45,70 115,215 190,175 222,200 292,140 324,165 394,110 426,135 496,80 545,38 585,112 620,84"/>
+<circle class="d-dot" cx="45" cy="70" r="7"/><text class="d-label" x="58" y="62">Hook</text>
+<g class="d-num"><circle cx="190" cy="175" r="17"/><text x="190" y="182">1</text></g>
+<g class="d-num"><circle cx="292" cy="140" r="17"/><text x="292" y="147">2</text></g>
+<g class="d-num"><circle cx="394" cy="110" r="17"/><text x="394" y="117">3</text></g>
+<g class="d-num"><circle cx="496" cy="80" r="17"/><text x="496" y="87">4</text></g>
+<circle class="d-star" cx="545" cy="38" r="9"/><text class="d-label" x="528" y="30" text-anchor="end">Climax slide</text>
+<circle class="d-dot" cx="620" cy="84" r="7"/><text class="d-label" x="632" y="146" text-anchor="end">Takeaway</text>
+</svg><figcaption>Start high, explain, then climb. Every tension point sits a little higher than the one before.</figcaption></figure>

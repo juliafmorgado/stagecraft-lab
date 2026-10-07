@@ -1,0 +1,75 @@
+title: Stagecraft Lab
+description: A 60-minute speaking and storytelling workshop for technical people. Walk out with a reframed mindset, a story arc, and a 60-second opening.
+repo: https://github.com/juliafmorgado/stagecraft-lab
+credit: Frameworks developed by Julia Furst Morgado & Abdel Sghiouar.
+
+# Hosts: set these before the workshop. Leave empty to hide the buttons.
+hook_wall_url: ""      # an anonymous poll or form (Slido, Mentimeter, Google Form...)
+discussion_url: ""     # a GitHub Discussions thread for posting hooks afterwards
+hashtag: "#StagecraftLab"
+
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: false
+
+exclude:
+  - README.md
+  - LICENSE
+  - CLAUDE.md
+  - AGENTS.md
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+segments:
+  - num: ""
+    title: Overview
+    url: /
+    time: 3
+  - num: "01"
+    title: Imposter syndrome
+    url: /01-imposter-syndrome.html
+    time: 7
+  - num: "02"
+    title: Your talk
+    url: /02-your-talk.html
+    time: 5
+  - num: "03"
+    title: The story arc
+    url: /03-story-arc.html
+    time: 8
+  - num: "04"
+    title: The opening
+    url: /04-opening.html
+    time: 8
+  - num: "05"
+    title: Nerves
+    url: /05-nerves.html
+    time: 7
+  - num: "06"
+    title: Voice and body
+    url: /06-voice-body.html
+    time: 8
+  - num: "07"
+    title: Hot seat
+    url: /07-hot-seat.html
+    time: 11
+  - num: "08"
+    title: Take it home
+    url: /08-take-it-home.html
+    time: 3
+
+reference:
+  - title: Worked example
+    url: /examples.html
+  - title: If you're stuck
+    url: /if-youre-stuck.html
+  - title: For hosts
+    url: /hosts.html

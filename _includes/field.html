@@ -1,0 +1,2 @@
+{%- assign f = site.data.fields | where: "id", include.id | first -%}
+<div class="field"><label class="field-label" for="f-{{ include.id }}">{{ include.label | default: f.label }}</label><textarea id="f-{{ include.id }}" data-field="{{ include.id }}" rows="{{ include.rows | default: 2 }}" placeholder="{{ include.placeholder }}"></textarea><span class="field-status" aria-live="polite"></span></div>

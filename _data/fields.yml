@@ -1,0 +1,44 @@
+# Every workbook field, in the order it appears on "Take it home".
+# Answers are saved in the participant's own browser only.
+- id: topic
+  label: My topic
+  segment: "00"
+- id: fear
+  label: What I was afraid of
+  segment: "01"
+- id: reframe
+  label: My reframe
+  segment: "01"
+- id: purpose
+  label: My talk in one sentence
+  segment: "02"
+- id: frame
+  label: My frame
+  segment: "03"
+- id: box1
+  label: "Box 1 (with the stakes)"
+  segment: "03"
+- id: box2
+  label: Box 2
+  segment: "03"
+- id: box3
+  label: Box 3
+  segment: "03"
+- id: climax
+  label: My climax line
+  segment: "03"
+- id: hook
+  label: My hook
+  segment: "04"
+- id: opening
+  label: My 60-second opening
+  segment: "04"
+- id: closing
+  label: My closing line
+  segment: "04"
+- id: ritual
+  label: My backstage ritual
+  segment: "05"
+- id: commitment
+  label: At my next talk, I will
+  segment: "08"
