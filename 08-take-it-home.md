@@ -31,7 +31,7 @@ Everything you filled in during the lab, on one page. Copy it into your notes be
 | 04 Opening | **[Hook]** + **[Who you are, one sentence]** + **[What the room gets, one sentence]**. End on a line, then say thank you. |
 | 05 Nerves | Fist clench → box breathing 4·4·4·4 → anchor phrase. Blank mind: pause, breathe, slide title, key point. |
 | 06 Voice and body | Pitch drop, whisper, 3-second pause. Walk on transitions, plant on points. Three eye-contact zones. |
-| 07 Hot seat | One thing that worked. One thing to try. |
+| 07 Hot seat | What worked. What to try. |
 
 ## Share it
 
