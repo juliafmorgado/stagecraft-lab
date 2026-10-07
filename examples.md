@@ -68,12 +68,10 @@ Alex tried the climax line all three ways. The **3-second pause** before "We wer
 
 Alex went for rung 3, standing on the X.
 
-> **One thing that worked:** "When you said 412 and then stopped, I wanted to know what happened."
+> **1. What worked:** "When you said 412 and then stopped, I wanted to know what happened."
 >
-> **One thing to try:** "Next time, try saying your name after the number, not before. You started with 'Hi, I'm Alex' out of habit."
+> **2. What to try:** "Next time, try saying your name after the number, not before. You started with 'Hi, I'm Alex' out of habit."
 {: .card data-label="Feedback Alex got"}
-
-Take two started with the number.
 
 ## 08 · Take it home
 

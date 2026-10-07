@@ -34,7 +34,7 @@ Everything you need to run the lab: the script, what to cut when you're behind, 
 | 0:23 | **04 Opening** · 8 min | Walk through 2 or 3 hooks (1 min). Write hook (1 min). Write 60-second opening, then whisper-time it (3 min). Closing line (1 min). Hook wall (2 min): read 5 or 6 aloud with one kind comment each. |
 | 0:31 | **05 Nerves** · 7 min | Backstage checklist, quickly (1 min). **Lead the room** through fist clench, 4 rounds of box breathing (count out loud), anchor phrase (3 min). Write ritual (1 min). On-stage recovery (1 min). Anchor phrase all at once (1 min). |
 | 0:38 | **06 Voice & body** · 8 min | Three micro-drills on the climax line (3 min). Stage map, demo it yourself on the tape X (3 min). Everyone stands for the body checklist (1 min). Everyone says the climax line standing (1 min). |
-| 0:46 | **07 Hot seat** · 11 min | Explain rungs and feedback rule (1 min). Hook round (3 min). 2 or 3 volunteers, 60 s + feedback + take two (6 min). Name what improved (1 min). |
+| 0:46 | **07 Hot seat** · 11 min | Explain rungs and feedback rule (1 min). Hook round (3 min). 3 volunteers on rung 2 or 3, each 60 s + 1 min feedback (6 min). Name what improved (1 min). |
 | 0:57 | **08 Take it home** · 3 min | Commitment card (1 min). Tell them to copy their sheet. Point at the hashtag. End on a line, then thank them. |
 
 ## The cut line
@@ -67,7 +67,7 @@ If the hot seat goes quiet for more than five seconds, a host stands on the X an
 > "Hi, um, so, my name is ___ and I work at ___. Sorry, I'm a bit nervous, I put this together last night. So here's the agenda. First I'll talk a bit about me, then some background on alerting, then..."
 {: .card data-label="Flawed opening script"}
 
-Then ask the room: **"What should I fix?"** Take three answers. They'll name the name-first opening, the apology, and the agenda. Then do take two using the 60-second formula with a real hook.
+Then ask the room: **"What should I fix?"** Take three answers. They'll name the name-first opening, the apology, and the agenda. Then deliver it again using the 60-second formula with a real hook.
 
 The room has now coached someone, and the bar for volunteering is low. Ask again: "Who wants to try theirs?" Someone usually does. If still nobody, run the hook round with everyone reading to a neighbor.
 
